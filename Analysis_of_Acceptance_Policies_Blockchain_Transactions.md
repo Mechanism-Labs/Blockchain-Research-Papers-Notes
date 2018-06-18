@@ -15,21 +15,21 @@ attacker persistently attempts to double spend a particular transaction regardle
 
 ## Process: 
 1. Determine how many blocks ahead the attacker is before tx is
-		broadcast p_i is determined 
+-	broadcast p_i is determined 
 2. Determine how many blocks attacker is behind or ahead of the main chain after the tx is accepted and settled
-		Eq 1 from paper
-		**Explanation:** (probability attacker was j + N blocks behind/ahead at time of broadcast) * (probability attacker made i - j blocks after transaction was broadcast in time T) , i.e attacker would have had to make i + N blocks in total. 
+-	Eq 1 from paper
+- **Explanation:** (probability attacker was j + N blocks behind/ahead at time of broadcast) * (probability attacker made i - j blocks after transaction was broadcast in time T) , i.e attacker would have had to make i + N blocks in total. 
 
 3. Determine probability the attacker can create a chain longer than main chain after tx is settled: 
-		CTMC 
-		Eq 2 from paper
-		**Explanation**: Probability the attacker was behind * probability he managed to come ahead  + probability the attacker was ahead 
+-		CTMCs (continuous time markov chains)
+-		Eq 2 from paper
+-**Explanation**: Probability the attacker was behind * probability he managed to come ahead  + probability the attacker was ahead 
 
 ## Results: 
 - Graph of confirmations required vs Time since Tx Broadcast
 - 		Setup: p_DoubleSpend < 1.337, α = 0.2, Dynamic Acceptance policy
 -		 Compare Static acceptance policy (5 confirmations) to their Dynamic Acceptance policy (p_DoubleSpend < 1.337, α = 0.2):
-** Graphs: **
+**Graphs:**
 - Double spend probability vs Time from broadcast to Tx acceptance (T)
 - Number of Confirmations Required Vs. Time Since Transaction Broadcast
 - Setup: E[p_DoubleSpend] = 0.8754% , Static (6 confs)
