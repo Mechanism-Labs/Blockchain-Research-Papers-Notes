@@ -1,4 +1,4 @@
-#[An Analysis of Acceptance Policies For Blockchain Transactions](http://https://eprint.iacr.org/2018/040.pdf "An Analysis of Acceptance Policies For Blockchain Transactions")
+#[An Analysis of Acceptance Policies For Blockchain Transactions](https://eprint.iacr.org/2018/040.pdf "An Analysis of Acceptance Policies For Blockchain Transactions")
 ## Parameters: 
 - λ  : poisson rate at which blocks are added to main chain (0.1 in bitcoin) 
 - α : fraction of network controlled by attacker. 
