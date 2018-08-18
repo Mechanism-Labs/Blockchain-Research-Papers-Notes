@@ -3,7 +3,7 @@
 - λ  : poisson rate at which blocks are added to main chain (0.1 in bitcoin) 
 - α : fraction of network controlled by attacker. 
 - p_i : probability attacker is i blocks ahead of main chain immediately before tx was broadcast
-- p_i* : probability attacker is exactly i blocks ahead/behidn the main chain at time T. 
+- p_i* : probability attacker is exactly i blocks ahead/behind the main chain at time T. 
 - T : length of time from broad cast to acceptance 
 - N : number of blocks added by main chain between time of broadcast and acceptance of txs 
 
@@ -23,7 +23,7 @@ attacker persistently attempts to double spend a particular transaction regardle
 3. Determine probability the attacker can create a chain longer than main chain after tx is settled: 
 -		CTMCs (continuous time markov chains)
 -		Eq 2 from paper
--**Explanation**: Probability the attacker was behind * probability he managed to come ahead  + probability the attacker was ahead 
+-**Explanation**: Probability the attacker was behind * probability he managed to come ahead + probability the attacker was ahead 
 
 ## Results: 
 - Graph of confirmations required vs Time since Tx Broadcast
@@ -38,5 +38,5 @@ attacker persistently attempts to double spend a particular transaction regardle
 - CDF of p_DoubleSpend At Transaction Acceptance vs  p_DoubleSpend At Transaction Acceptance
 - Setup: E[p_DoubleSpend] = 0.8754% , Static (6 confs)
 -  E[Time To Transaction Acceptance] vs. 99th percentile of pDouble Spend
-- Expected Probability a Double Spend Has Occured vs. Time Since Transaction Broadcast
+- Expected Probability a Double Spend Has Occurred vs. Time Since Transaction Broadcast
 - Setup: E[p_DoubleSpend] = 0.8754% , Static (6 confs)
